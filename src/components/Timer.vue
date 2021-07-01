@@ -24,9 +24,8 @@ export default {
             screenTime: null,
             emojiIcon: "⏰",
             totalTime: ref(1 * 60),
-            resetButton: false,
             isReset: true,
-            text: 'minute'
+            text: ref('minute')
 
         }
     },
@@ -34,19 +33,20 @@ export default {
             start() {
                 
                 this.screenTime = setInterval(()=>this.timerCountdown(), 1000);
-                this.resetButton = true;
+               
             
             },
             stop() {
                 clearInterval(this.screenTime);
                 this.screenTime = null;
-                this.resetButton = true;
+               
             },
             reset() {
                 clearInterval(this.screenTime);
                 this.totalTime = (1 * 60);
-                this.resetButton = false;
-                this.screenTime = null;
+                this.text = ref('minute')
+                this.screenTime = null; 
+                
             },
             editScreenTime(time) {
                 return (time < 10 ? '0' : '') + time;  
@@ -54,13 +54,13 @@ export default {
             timerCountdown() {
                 this.totalTime--;
                 if (this.totalTime == 0) {
-                    this.totalTime = (0) 
-                    this.reset()
-                    
+                    this.reset()   
                 }
                 
-                this.totalTime <= 60 ? this.text = 'seconds' : ''
-            }
+                this.totalTime < 60 ? this.text = 'seconds' : ''
+                this.totalTime >= 60 ? this.text = 'minute' : ''
+
+            },
         },
          computed:{
             minutes() {
