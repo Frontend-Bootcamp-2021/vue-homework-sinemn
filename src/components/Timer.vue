@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import {ref,reactive} from "vue"
+import {ref} from "vue"
 export default {
     data() {
         return {
@@ -25,7 +25,7 @@ export default {
             emojiIcon: "⏰",
             totalTime: ref(1 * 60),
             isReset: true,
-            text: ref('minute')
+            text: 'minute'
 
         }
     },
@@ -44,7 +44,7 @@ export default {
             reset() {
                 clearInterval(this.screenTime);
                 this.totalTime = (1 * 60);
-                this.text = ref('minute')
+                this.text = 'minute'
                 this.screenTime = null; 
                 
             },
