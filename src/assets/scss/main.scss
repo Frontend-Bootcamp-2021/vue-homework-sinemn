@@ -1,50 +1,53 @@
-@import './variables';
+@import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap");
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-html, body {
+* {
+  font-family: "Work Sans", sans-serif;
   margin: 0;
   padding: 0;
-
-  width: 100%;
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
-
-  background-color: $main-bgcolor;
-
-	font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  background-color: #fff;
 }
+.timer {
+  margin: auto;
+  width: 50%;
+  height: 30em;
+  border: 4px dashed #aba7a2;
+  padding: 20px;
+  text-align: center;
 
-main {
-  flex-grow: 1;
+  &__text {
+    padding: 10%;
 
-  max-width: 800px;
+    &__title {
+      font-weight: 500;
+      font-size: 40px;
+      margin: 35px;
+      color: #333;
+    }
+    &__seconds {
+      font-size: 60px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-}
+      span {
+        font-weight: 300;
+        font-size: 25px;
+        color: #aba7a2;
+      }
+    }
+  }
+  &__button {
+    button {
+      font-size: 25px;
+      background-color: Transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+      margin-right: 25px;
+    }
 
-.page-header {
-  margin: 0 0 20px;
-  padding: 0;
-
-  font-size: 24px;
-  font-weight: bold;
-}
-
-#confetti {
-  z-index: 0;
-  position: absolute;
-  left: 0;
+    button:hover {
+      border-bottom: 3px solid #e12929;
+    }
+  }
 }
